@@ -22,7 +22,7 @@ var (
 	reg                 = prometheus.NewRegistry()
 	grpcMetrics         = grpc_prometheus.NewServerMetrics()
 	customMetricCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
-		Name: "grpcgoonch-nonheadless_server_handle_count",
+		Name: "grpcgoonchnonheadless_server_handle_count",
 		Help: "Total number of RPCs handled on the goonch server.",
 	}, []string{"name"})
 )
