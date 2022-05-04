@@ -1,4 +1,4 @@
-module github.com/thaigoonch/grpcgoonch-headless
+module github.com/thaigoonch/grpcgoonch-nonheadless
 
 go 1.17
 

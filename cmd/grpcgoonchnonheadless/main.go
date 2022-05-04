@@ -10,7 +10,7 @@ import (
 	grpc_prometheus "github.com/grpc-ecosystem/go-grpc-prometheus"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
-	grpcgoonch "github.com/thaigoonch/grpcgoonch-headless/service"
+	grpcgoonch "github.com/thaigoonch/grpcgoonch-nonheadless/service"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/grpclog"
 	"google.golang.org/grpc/keepalive"
@@ -22,7 +22,7 @@ var (
 	reg                 = prometheus.NewRegistry()
 	grpcMetrics         = grpc_prometheus.NewServerMetrics()
 	customMetricCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
-		Name: "grpcgoonchheadless_server_handle_count",
+		Name: "grpcgoonch-nonheadless_server_handle_count",
 		Help: "Total number of RPCs handled on the goonch server.",
 	}, []string{"name"})
 )
@@ -36,7 +36,7 @@ func init() {
 }
 
 func main() {
-	fmt.Println("grpcgoonch-headless waiting for client requests...")
+	fmt.Println("grpcgoonch-nonheadless waiting for client requests...")
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", grpcPort))
 	if err != nil {
 		grpclog.Fatalf("Failed to listen on port %d: %v", grpcPort, err)

@@ -4,7 +4,7 @@
 // - protoc             v3.18.1
 // source: service.proto
 
-package grpcgoonchheadless
+package grpcgoonchnonheadless
 
 import (
 	context "context"
